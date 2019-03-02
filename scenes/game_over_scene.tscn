@@ -1,0 +1,209 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/game_over_scene.gd" type="Script" id=1]
+[ext_resource path="res://fonts/kenny_pixel_square.tres" type="DynamicFont" id=2]
+[ext_resource path="res://sprites/big_white_button.svg" type="Texture" id=3]
+[ext_resource path="res://sprites/big_white_button_pressed.svg" type="Texture" id=4]
+
+
+
+
+
+
+
+[node name="Game Over Scene" type="Node"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 512.0 ],
+"_edit_vertical_guides_": [ 300.0 ]
+}
+
+[node name="Background" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 600.0
+margin_bottom = 1024.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Game Over Label" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 335.0
+margin_right = 200.0
+margin_bottom = 371.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+text = "Game Over"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Score Alert Label" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 476.0
+margin_right = 300.0
+margin_bottom = 512.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+text = "New High Score! "
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="High Score Alert Label" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 512.0
+margin_right = 300.0
+margin_bottom = 548.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+text = "Your High Score"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Score Label" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 476.0
+margin_right = 600.0
+margin_bottom = 512.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+text = "00000"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="High Score Label" type="Label" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 512.0
+margin_right = 600.0
+margin_bottom = 548.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+text = "00000"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Retry Button" type="TouchScreenButton" parent="." index="6"]
+
+position = Vector2( 110, 600 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 4 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Retry Label" type="Label" parent="Retry Button" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 190.0
+margin_bottom = 45.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "Retry"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+
