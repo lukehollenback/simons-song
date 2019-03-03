@@ -19,42 +19,28 @@ func _ready():
 	infoButton.connect("released", self, "_on_info_button_released")
 
 func _on_play_button_pressed():
-	# "Press" the button
-	playButton.position.y += PRESSED_BUTTON_OFFSET
+	GlobalHandler.pressButton(playButton, PRESSED_BUTTON_OFFSET)
 
 func _on_play_button_released():
-	# "Un-Press" the button
-	playButton.position.y -= PRESSED_BUTTON_OFFSET
-	
-	# Go to the game scene
+	GlobalHandler.releaseButton(playButton, PRESSED_BUTTON_OFFSET)
 	get_tree().change_scene("res://Scenes/game_scene.tscn")
 
 func _on_more_button_pressed():
-	# "Press" the button
-	moreButton.position.y += PRESSED_BUTTON_OFFSET
+	GlobalHandler.pressButton(moreButton, PRESSED_BUTTON_OFFSET)
 
 func _on_more_button_released():
-	# "Un-Press" the button
-	moreButton.position.y -= PRESSED_BUTTON_OFFSET
-	
-	# Open the developer page to show more apps to download
+	GlobalHandler.releaseButton(playButton, PRESSED_BUTTON_OFFSET)
 	OS.shell_open(GlobalHandler.DEVELOPER_URL)
 	
 func _on_subscribe_button_pressed():
-	# "Press" the button
-	subscribeButton.position.y += PRESSED_BUTTON_OFFSET
+	GlobalHandler.pressButton(subscribeButton, PRESSED_BUTTON_OFFSET)
 
 func _on_subscribe_button_released():
-	# "Un-Press" the button
-	subscribeButton.position.y -= PRESSED_BUTTON_OFFSET
-	
-	# Trigger the in-app-purchase dialog if necessary
+	GlobalHandler.releaseButton(subscribeButton, PRESSED_BUTTON_OFFSET)
 	GlobalHandler.showSubscriptionOffer()
 
 func _on_info_button_pressed():
-	# "Press" the button
-	infoButton.position.y += PRESSED_BUTTON_OFFSET
+	GlobalHandler.pressButton(infoButton, PRESSED_BUTTON_OFFSET)
 
 func _on_info_button_released():
-	# "Un-Press" the button
-	infoButton.position.y -= PRESSED_BUTTON_OFFSET
+	GlobalHandler.releaseButton(infoButton, PRESSED_BUTTON_OFFSET)

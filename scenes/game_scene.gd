@@ -84,35 +84,43 @@ func _process(delta):
 
 func _on_blue_button_pressed():
 	blueButtonParticles.restart()
-	blueButton.position.y += PRESSED_BUTTON_OFFSET
+	
+	GlobalHandler.pressButton(blueButton, PRESSED_BUTTON_OFFSET)
+	
 	checkNextButtonInPattern(blueButton)
 
 func _on_blue_button_released():
-	blueButton.position.y -= PRESSED_BUTTON_OFFSET
+	GlobalHandler.releaseButton(blueButton, PRESSED_BUTTON_OFFSET)
 	
 func _on_green_button_pressed():
 	greenButtonParticles.restart()
-	greenButton.position.y += PRESSED_BUTTON_OFFSET
+	
+	GlobalHandler.pressButton(greenButton, PRESSED_BUTTON_OFFSET)
+	
 	checkNextButtonInPattern(greenButton)
 
 func _on_green_button_released():
-	greenButton.position.y -= PRESSED_BUTTON_OFFSET
+	GlobalHandler.releaseButton(greenButton, PRESSED_BUTTON_OFFSET)
 	
 func _on_red_button_pressed():
 	redButtonParticles.restart()
-	redButton.position.y += PRESSED_BUTTON_OFFSET
+	
+	GlobalHandler.pressButton(redButton, PRESSED_BUTTON_OFFSET)
+	
 	checkNextButtonInPattern(redButton)
 
 func _on_red_button_released():
-	redButton.position.y -= PRESSED_BUTTON_OFFSET
+	GlobalHandler.releaseButton(redButton, PRESSED_BUTTON_OFFSET)
 
 func _on_yellow_button_pressed():
 	yellowButtonParticles.restart()
-	yellowButton.position.y += PRESSED_BUTTON_OFFSET
+	
+	GlobalHandler.pressButton(yellowButton, PRESSED_BUTTON_OFFSET)
+	
 	checkNextButtonInPattern(yellowButton)
 
 func _on_yellow_button_released():
-	yellowButton.position.y -= PRESSED_BUTTON_OFFSET
+	GlobalHandler.releaseButton(yellowButton, PRESSED_BUTTON_OFFSET)
 
 func _on_timer_timeout():
 	gameOver()

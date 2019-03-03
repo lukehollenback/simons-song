@@ -39,12 +39,10 @@ func _ready():
 	infoButton.connect("released", self, "_on_info_button_released")
 
 func _on_retry_button_pressed():
-	# "Press" the button
-	retryButton.position.y += PRESSED_BUTTON_OFFSET
+	GlobalHandler.pressButton(retryButton, PRESSED_BUTTON_OFFSET)
 
 func _on_retry_button_released():
-	# "Un-Press" the button
-	retryButton.position.y -= PRESSED_BUTTON_OFFSET
+	GlobalHandler.releaseButton(retryButton, PRESSED_BUTTON_OFFSET)
 	
 	# If it is time to show a full screen ad, do so and reset the time counter
 	# between now and the next one; Otherwise, go back to the game scene for a
@@ -64,31 +62,21 @@ func _on_retry_button_released():
 		get_tree().change_scene("res://Scenes/game_scene.tscn")
 
 func _on_home_button_pressed():
-	# "Press" the button
-	homeButton.position.y += PRESSED_BUTTON_OFFSET
+	GlobalHandler.pressButton(homeButton, PRESSED_BUTTON_OFFSET)
 
 func _on_home_button_released():
-	# "Un-Press" the button
-	homeButton.position.y -= PRESSED_BUTTON_OFFSET
-	
-	# Go to the main menu
+	GlobalHandler.releaseButton(homeButton, PRESSED_BUTTON_OFFSET)
 	get_tree().change_scene("res://Scenes/menu_scene.tscn")
 	
 func _on_subscribe_button_pressed():
-	# "Press" the button
-	subscribeButton.position.y += PRESSED_BUTTON_OFFSET
+	GlobalHandler.pressButton(subscribeButton, PRESSED_BUTTON_OFFSET)
 
 func _on_subscribe_button_released():
-	# "Un-Press" the button
-	subscribeButton.position.y -= PRESSED_BUTTON_OFFSET
-	
-	# Trigger the in-app-purchase dialog if necessary
+	GlobalHandler.releaseButton(subscribeButton, PRESSED_BUTTON_OFFSET)
 	GlobalHandler.showSubscriptionOffer()
 
 func _on_info_button_pressed():
-	# "Press" the button
-	infoButton.position.y += PRESSED_BUTTON_OFFSET
+	GlobalHandler.pressButton(infoButton, PRESSED_BUTTON_OFFSET)
 
 func _on_info_button_released():
-	# "Un-Press" the button
-	infoButton.position.y -= PRESSED_BUTTON_OFFSET
+	GlobalHandler.releaseButton(infoButton, PRESSED_BUTTON_OFFSET)

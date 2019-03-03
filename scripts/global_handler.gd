@@ -9,6 +9,8 @@ const AD_FREE_PLAYTIME = 30
 const AD_BANNER_FREE_PLAYTIME = 7
 const TIME_BETWEEN_SUBSCRIPTION_OFFERS = 120
 
+onready var clickPlayer = AudioStreamPlayer.new()
+
 var playtimeSinceLastFullScreenAd = 0.0
 var playtimeSinceLastBannerAd = 0.0
 var playtimeSinceLastSubscriptionOffer = 0.0
@@ -20,6 +22,11 @@ var savedGlobals = {
 	}
 
 func _ready():
+	# Create universal audio players
+	var clickAudioFile = load("res://sounds/switch.ogg")
+	clickPlayer.set_stream(clickAudioFile)
+	add_child(clickPlayer)
+	
 	# Load saved game details
 	loadGame()
 	
@@ -55,6 +62,14 @@ func setSavedGlobal(key, value):
 
 func getSavedGlobal(key):
 	return savedGlobals[key]
+
+func pressButton(button, pressedOffset):
+	button.position.y += pressedOffset
+	GlobalHandler.clickPlayer.play()
+
+func releaseButton(button, pressedOffset):
+	button.position.y -= pressedOffset
+	GlobalHandler.clickPlayer.play()
 	
 func incrementPlaytime(amount):
 	savedGlobals["playtime"] += amount
