@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/am_chord.ogg-052d0be08cf6985c1681bc0b9cb2e6ea.oggstr"
+
+[deps]
+
+source_file="res://sounds/am_chord.ogg"
+dest_files=[ "res://.import/am_chord.ogg-052d0be08cf6985c1681bc0b9cb2e6ea.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

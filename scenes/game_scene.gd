@@ -7,8 +7,13 @@ var deltaTotal = 0
 var isBannerAdDisplaying = false
 var stage = 0
 var currentPattern = [ ]
+var currentPatternWorking = [ ]
 var playingPattern = false
 var buttons
+onready var cChordAudio = get_node("C Chord Audio")
+onready var gChordAudio = get_node("G Chord Audio")
+onready var amChordAudio = get_node("Am Chord Audio")
+onready var fChordAudio = get_node("F Chord Audio")
 onready var blueButton = get_node("Blue Button")
 onready var blueButtonParticles = get_node("Blue Button Particles")
 onready var greenButton = get_node("Green Button")
@@ -85,42 +90,50 @@ func _process(delta):
 func _on_blue_button_pressed():
 	blueButtonParticles.restart()
 	
-	GlobalHandler.pressButton(blueButton, PRESSED_BUTTON_OFFSET)
+	GlobalHandler.pressButton(blueButton, PRESSED_BUTTON_OFFSET, true)
 	
 	checkNextButtonInPattern(blueButton)
+	
+	cChordAudio.play()
 
 func _on_blue_button_released():
-	GlobalHandler.releaseButton(blueButton, PRESSED_BUTTON_OFFSET)
+	GlobalHandler.releaseButton(blueButton, PRESSED_BUTTON_OFFSET, true)
 	
 func _on_green_button_pressed():
 	greenButtonParticles.restart()
 	
-	GlobalHandler.pressButton(greenButton, PRESSED_BUTTON_OFFSET)
+	GlobalHandler.pressButton(greenButton, PRESSED_BUTTON_OFFSET, true)
 	
 	checkNextButtonInPattern(greenButton)
+	
+	gChordAudio.play()
 
 func _on_green_button_released():
-	GlobalHandler.releaseButton(greenButton, PRESSED_BUTTON_OFFSET)
+	GlobalHandler.releaseButton(greenButton, PRESSED_BUTTON_OFFSET, true)
 	
 func _on_red_button_pressed():
 	redButtonParticles.restart()
 	
-	GlobalHandler.pressButton(redButton, PRESSED_BUTTON_OFFSET)
+	GlobalHandler.pressButton(redButton, PRESSED_BUTTON_OFFSET, true)
 	
 	checkNextButtonInPattern(redButton)
+	
+	amChordAudio.play()
 
 func _on_red_button_released():
-	GlobalHandler.releaseButton(redButton, PRESSED_BUTTON_OFFSET)
+	GlobalHandler.releaseButton(redButton, PRESSED_BUTTON_OFFSET, true)
 
 func _on_yellow_button_pressed():
 	yellowButtonParticles.restart()
 	
-	GlobalHandler.pressButton(yellowButton, PRESSED_BUTTON_OFFSET)
+	GlobalHandler.pressButton(yellowButton, PRESSED_BUTTON_OFFSET, true)
 	
 	checkNextButtonInPattern(yellowButton)
+	
+	fChordAudio.play()
 
 func _on_yellow_button_released():
-	GlobalHandler.releaseButton(yellowButton, PRESSED_BUTTON_OFFSET)
+	GlobalHandler.releaseButton(yellowButton, PRESSED_BUTTON_OFFSET, true)
 
 func _on_timer_timeout():
 	gameOver()
@@ -157,19 +170,19 @@ func playPattern():
 	countdownTimer.set_paused(false)
 	playingPattern = false
 
-func refreshPattern():
-	# Calculate the length of the pattern based on the current stage
+func refreshPattern():	
+	# If it is time, add another note to the pattern
 	# (NOTE: This current calculation will increment the length of the pattern
 	#  every three stages.)
-	var length = (2 + floor(stage / 3))
+	var buttonIndex = (randi() % buttons.size())
 	
-	# Clear the currently-stored pattern
-	currentPattern.clear()
-	
-	# Create a new pattern of the specified length
-	for i in range(length):
-		var buttonIndex = (randi() % buttons.size())
+	if stage == 0:
 		currentPattern.append(buttons[buttonIndex])
+	else:
+		currentPattern.append(buttons[buttonIndex])
+	
+	# Store the current pattern
+	currentPatternWorking = currentPattern.duplicate()
 	
 	# Increment the stage number
 	stage += 1
@@ -195,14 +208,14 @@ func checkNextButtonInPattern(button):
 	# If the button press is from a human and not a simulation
 	if playingPattern == false:
 		# Check if the button was the correct one
-		if currentPattern[0] == button:
+		if currentPatternWorking[0] == button:
 			ScoreHandler.countCorrectButtonPress()
-			currentPattern.remove(0)
+			currentPatternWorking.remove(0)
 		else:
 			gameOver()
 	
 		# Check if the whole pattern has been pressed
-		if currentPattern.size() == 0:
+		if currentPatternWorking.size() == 0:
 			ScoreHandler.countCorrectPattern()
 			refreshPattern()
 

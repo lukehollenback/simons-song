@@ -63,13 +63,17 @@ func setSavedGlobal(key, value):
 func getSavedGlobal(key):
 	return savedGlobals[key]
 
-func pressButton(button, pressedOffset):
+func pressButton(button, pressedOffset, muteClick = false):
 	button.position.y += pressedOffset
-	GlobalHandler.clickPlayer.play()
+	
+	if not muteClick:
+		GlobalHandler.clickPlayer.play()
 
-func releaseButton(button, pressedOffset):
+func releaseButton(button, pressedOffset, muteClick = false):
 	button.position.y -= pressedOffset
-	GlobalHandler.clickPlayer.play()
+	
+	if not muteClick:
+		GlobalHandler.clickPlayer.play()
 	
 func incrementPlaytime(amount):
 	savedGlobals["playtime"] += amount
