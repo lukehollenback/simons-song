@@ -4,6 +4,7 @@ const CORRECT_BUTTON_SCORE = 9
 const CORRECT_PATTERN_SCORE = 39
 
 var score = 0
+var multiplier = 1
 
 func resetScore():
 	score = 0;
@@ -18,7 +19,15 @@ func checkForHighscore():
 	return false
 
 func countCorrectButtonPress():
-	score += CORRECT_BUTTON_SCORE
+	recalculateMultiplier()
+	score += (CORRECT_BUTTON_SCORE * multiplier)
 
 func countCorrectPattern():
-	score += CORRECT_PATTERN_SCORE
+	recalculateMultiplier()
+	score += (CORRECT_PATTERN_SCORE * multiplier)
+
+func recalculateMultiplier():
+	if GlobalHandler.isDoublePointsEnabled():
+		multiplier = 2
+	else:
+		multiplier = 1

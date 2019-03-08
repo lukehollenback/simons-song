@@ -18,7 +18,8 @@ var hasSubscribed = false
 
 var savedGlobals = {
 		"highscore" : 0,
-		"playtime" : 0.0
+		"playtime" : 0.0,
+		"remainingDoublePointsTime" : 0.0
 	}
 
 func _ready():
@@ -76,10 +77,17 @@ func releaseButton(button, pressedOffset, muteClick = false):
 		GlobalHandler.clickPlayer.play()
 	
 func incrementPlaytime(amount):
+	# Increment playtime counters for advertisements
 	savedGlobals["playtime"] += amount
 	playtimeSinceLastFullScreenAd += amount
 	playtimeSinceLastBannerAd += amount
 	playtimeSinceLastSubscriptionOffer += amount
+
+	# If double points time has been purchased or earned, decrement it accordingly
+	savedGlobals["remainingDoublePointsTime"] -= amount
+
+	if savedGlobals["remainingDoublePointsTime"] < 0.0:
+		savedGlobals["remainingDoublePointsTime"] = 0.0
 	
 	saveGame()
 
@@ -115,3 +123,10 @@ func isTimeForSubscriptionOffer():
 func showSubscriptionOffer():
 	# (TODO: Show the in-app-purchase offer for a subscription to an ad-free
 	#  experience if the user has not yet subscribed.)
+	pass
+
+func isDoublePointsEnabled():
+	if savedGlobals["remainingDoublePointsTime"] > 0.0:
+		return true
+	
+	return false

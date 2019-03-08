@@ -199,6 +199,12 @@ func refreshUI():
 	# Refresh the Timer label
 	timerLabel.text = str(ceil(countdownTimer.time_left))
 
+	# Refresh the Double Points label
+	if GlobalHandler.isDoublePointsEnabled():
+		doublePointsLabel.set_visible(true)
+	else:
+		doublePointsLabel.set_visible(false)
+
 func checkNextButtonInPattern(button):
 	# If the button press is from a human and not a simulation
 	if playingPattern == false:
