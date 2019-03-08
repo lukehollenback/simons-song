@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/game_scene.gd" type="Script" id=1]
 [ext_resource path="res://fonts/kenny_pixel_square.tres" type="DynamicFont" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://sounds/g_chord.ogg" type="AudioStream" id=12]
 [ext_resource path="res://sounds/am_chord.ogg" type="AudioStream" id=13]
 [ext_resource path="res://sounds/f_chord.ogg" type="AudioStream" id=14]
+[ext_resource path="res://sprites/red_arrow_right.svg" type="Texture" id=15]
+[ext_resource path="res://sprites/green_arrow_left.svg" type="Texture" id=16]
 
 [sub_resource type="Gradient" id=1]
 
@@ -66,9 +68,13 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Spread" ]
 
-[node name="Game Scene" type="Node" index="0"]
+[node name="Game Scene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 319.252 ],
+"_edit_vertical_guides_": [ 32.8895, 568.313 ]
+}
 
 [node name="Background" type="ColorRect" parent="." index="0"]
 
@@ -360,5 +366,95 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="Double Points Label" type="Label" parent="." index="16"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 505.0
+margin_top = 92.0
+margin_right = 613.0
+margin_bottom = 167.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.117647, 0.654902, 0.882353, 1 )
+text = "Double
+Points!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Simon's Turn Sprite" type="Sprite" parent="." index="17"]
+
+position = Vector2( 72.2112, 196.461 )
+texture = ExtResource( 15 )
+
+[node name="Simon's Turn Label" type="Label" parent="." index="18"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 167.0
+margin_right = 400.0
+margin_bottom = 203.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+text = "Simon"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Your Turn Sprite" type="Sprite" parent="." index="19"]
+
+position = Vector2( 528.728, 257.241 )
+texture = ExtResource( 16 )
+
+[node name="Your Turn Label" type="Label" parent="." index="20"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 228.0
+margin_right = 400.0
+margin_bottom = 264.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+text = "You"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
 
 

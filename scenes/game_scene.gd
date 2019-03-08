@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 const DELTA_LIMIT = 0.5
 const PRESSED_BUTTON_OFFSET = 20
@@ -25,6 +25,9 @@ onready var yellowButtonParticles = get_node("Yellow Button Particles")
 onready var scoreLabel = get_node("Score Label")
 onready var stageLabel = get_node("Stage Label")
 onready var timerLabel = get_node("Time Label")
+onready var simonsTurnArrow = get_node("Simon's Turn Sprite")
+onready var yourTurnArrow = get_node("Your Turn Sprite")
+onready var doublePointsLabel = get_node("Double Points Label")
 onready var countdownTimer = Timer.new()
 
 
@@ -57,7 +60,7 @@ func _ready():
 	countdownTimer.set_one_shot(true)
 	
 	add_child(countdownTimer)
-	
+
 	# Build the initial pattern
 	refreshPattern()
 	
@@ -89,51 +92,39 @@ func _process(delta):
 
 func _on_blue_button_pressed():
 	blueButtonParticles.restart()
-	
 	GlobalHandler.pressButton(blueButton, PRESSED_BUTTON_OFFSET, true)
-	
-	checkNextButtonInPattern(blueButton)
-	
 	cChordAudio.play()
 
 func _on_blue_button_released():
 	GlobalHandler.releaseButton(blueButton, PRESSED_BUTTON_OFFSET, true)
+	checkNextButtonInPattern(blueButton)
 	
 func _on_green_button_pressed():
 	greenButtonParticles.restart()
-	
 	GlobalHandler.pressButton(greenButton, PRESSED_BUTTON_OFFSET, true)
-	
-	checkNextButtonInPattern(greenButton)
-	
 	gChordAudio.play()
 
 func _on_green_button_released():
 	GlobalHandler.releaseButton(greenButton, PRESSED_BUTTON_OFFSET, true)
+	checkNextButtonInPattern(greenButton)
 	
 func _on_red_button_pressed():
 	redButtonParticles.restart()
-	
 	GlobalHandler.pressButton(redButton, PRESSED_BUTTON_OFFSET, true)
-	
-	checkNextButtonInPattern(redButton)
-	
 	amChordAudio.play()
 
 func _on_red_button_released():
 	GlobalHandler.releaseButton(redButton, PRESSED_BUTTON_OFFSET, true)
+	checkNextButtonInPattern(redButton)
 
 func _on_yellow_button_pressed():
 	yellowButtonParticles.restart()
-	
 	GlobalHandler.pressButton(yellowButton, PRESSED_BUTTON_OFFSET, true)
-	
-	checkNextButtonInPattern(yellowButton)
-	
 	fChordAudio.play()
 
 func _on_yellow_button_released():
 	GlobalHandler.releaseButton(yellowButton, PRESSED_BUTTON_OFFSET, true)
+	checkNextButtonInPattern(yellowButton)
 
 func _on_timer_timeout():
 	gameOver()
@@ -143,6 +134,8 @@ func playPattern():
 	# can know during yields
 	countdownTimer.set_paused(true)
 	playingPattern = true
+	simonsTurnArrow.set_visible(true)
+	yourTurnArrow.set_visible(false)
 	
 	# Give the user time to look at the screen to watch the pattern
 	yield(get_tree().create_timer(.5), "timeout")
@@ -169,6 +162,8 @@ func playPattern():
 	# Unpause the timer and mark that the pattern is no longer is playing
 	countdownTimer.set_paused(false)
 	playingPattern = false
+	simonsTurnArrow.set_visible(false)
+	yourTurnArrow.set_visible(true)
 
 func refreshPattern():	
 	# If it is time, add another note to the pattern
