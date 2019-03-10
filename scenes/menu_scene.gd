@@ -37,7 +37,7 @@ func _on_subscribe_button_pressed():
 
 func _on_subscribe_button_released():
 	GlobalHandler.releaseButton(subscribeButton, PRESSED_BUTTON_OFFSET)
-	GlobalHandler.showSubscriptionOffer()
+	GlobalHandler.showPurchaseOffer()
 
 func _on_info_button_pressed():
 	GlobalHandler.pressButton(infoButton, PRESSED_BUTTON_OFFSET)

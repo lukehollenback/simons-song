@@ -12,7 +12,7 @@
 
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 141.173, 512.577, 992.512 ],
+"_edit_horizontal_guides_": [ 32.0465, 512.577, 992.512 ],
 "_edit_vertical_guides_": [ 32.0007, 568.587, 299.99, 300.063 ]
 }
 

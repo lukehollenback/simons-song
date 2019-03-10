@@ -67,7 +67,7 @@ func getSavedGlobal(key):
 
 func setAudioEnabled(audio):
 	savedGlobals["audioEnabled"] = audio
-	
+
 	saveGame()
 
 func isAudioEnabled():
@@ -128,9 +128,19 @@ func isTimeForSubscriptionOffer():
 	
 	return false
 
+func showPurchaseOffer():
+	if not hasSubscribed:
+		showSubscriptionOffer()
+	else:
+		showPurchaseOffer()
+
 func showSubscriptionOffer():
 	# (TODO: Show the in-app-purchase offer for a subscription to an ad-free
 	#  experience if the user has not yet subscribed.)
+	pass
+
+func showPurchaseOffer():
+	# (TODO: Show the in-app-purchse offer for a one-time double points offer.)
 	pass
 
 func isDoublePointsEnabled():

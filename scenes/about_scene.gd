@@ -23,6 +23,7 @@ func _on_audio_button_pressed():
 func _on_audio_button_released():
 	GlobalHandler.releaseButton(audioButton, PRESSED_BUTTON_OFFSET)
 	GlobalHandler.setAudioEnabled(!GlobalHandler.isAudioEnabled())
+	
 	refreshUI()
 
 func _on_home_button_pressed():
