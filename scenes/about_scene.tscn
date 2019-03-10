@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/about_scene.gd" type="Script" id=1]
 [ext_resource path="res://sprites/white_button.svg" type="Texture" id=2]
@@ -6,13 +6,14 @@
 [ext_resource path="res://sprites/game_icons.svg" type="Texture" id=4]
 [ext_resource path="res://sprites/red_button.svg" type="Texture" id=5]
 [ext_resource path="res://sprites/red_button_pressed.svg" type="Texture" id=6]
+[ext_resource path="res://fonts/kenny_pixel_square.tres" type="DynamicFont" id=7]
 
 [node name="Node" type="Node" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 32.4446 ],
-"_edit_vertical_guides_": [ 32.0007, 568.587 ]
+"_edit_horizontal_guides_": [ 141.173, 512.577, 992.512 ],
+"_edit_vertical_guides_": [ 32.0007, 568.587, 299.99, 300.063 ]
 }
 
 [node name="Background" type="ColorRect" parent="." index="0"]
@@ -85,5 +86,64 @@ texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 300, 300, 100, 100 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Copyright Label" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 470.0
+margin_right = 747.0
+margin_bottom = 584.0
+rect_scale = Vector2( 0.75, 0.75 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+text = "Simon's Song
+Copyright © 2019 Luke Hollenback
+All Rights Reserved"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Copyright Label2" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 935.0
+margin_right = 1105.0
+margin_bottom = 1049.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+text = "Game Design & Development by Luke Hollenback
+Sprites & Sound Effects by Kenney Vleugels (www.kenney.nl)
+Piano Sounds by Luke Hollenback"
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
 
 

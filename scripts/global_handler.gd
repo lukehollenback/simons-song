@@ -67,6 +67,8 @@ func getSavedGlobal(key):
 
 func setAudioEnabled(audio):
 	savedGlobals["audioEnabled"] = audio
+	
+	saveGame()
 
 func isAudioEnabled():
 	return savedGlobals["audioEnabled"]

@@ -10,7 +10,7 @@
 [ext_resource path="res://sprites/blue_button.svg" type="Texture" id=8]
 [ext_resource path="res://sprites/blue_button_pressed.svg" type="Texture" id=9]
 
-[node name="Menu Scene" type="Node" index="0"]
+[node name="Menu Scene" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
