@@ -232,7 +232,7 @@ func gameOver():
 	# Switch to the game over scene
 	# (NOTE: High scores will be calculated and persisted if necessary in the
 	#  game over scene.)
-	get_tree().change_scene("res://Scenes/game_over_scene.tscn")
+	get_tree().change_scene("res://scenes/game_over_scene.tscn")
 
 func calculateActualPosition(localPosition):
 	var offsetX = OS.get_window_safe_area().size.x - get_viewport().get_size().x

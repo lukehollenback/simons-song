@@ -59,14 +59,14 @@ func _on_retry_button_released():
 		GlobalHandler.showSubscriptionOffer()
 		GlobalHandler.resetPlaytimeSinceLastSubscriptionOffer()
 	else:
-		get_tree().change_scene("res://Scenes/game_scene.tscn")
+		get_tree().change_scene("res://scenes/game_scene.tscn")
 
 func _on_home_button_pressed():
 	GlobalHandler.pressButton(homeButton, PRESSED_BUTTON_OFFSET)
 
 func _on_home_button_released():
 	GlobalHandler.releaseButton(homeButton, PRESSED_BUTTON_OFFSET)
-	get_tree().change_scene("res://Scenes/menu_scene.tscn")
+	get_tree().change_scene("res://scenes/menu_scene.tscn")
 	
 func _on_subscribe_button_pressed():
 	GlobalHandler.pressButton(subscribeButton, PRESSED_BUTTON_OFFSET)
@@ -80,4 +80,4 @@ func _on_info_button_pressed():
 
 func _on_info_button_released():
 	GlobalHandler.releaseButton(infoButton, PRESSED_BUTTON_OFFSET)
-	get_tree().change_scene("res://Scenes/about_scene.tscn")
+	get_tree().change_scene("res://scenes/about_scene.tscn")

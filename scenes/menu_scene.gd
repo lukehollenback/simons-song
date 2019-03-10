@@ -23,13 +23,13 @@ func _on_play_button_pressed():
 
 func _on_play_button_released():
 	GlobalHandler.releaseButton(playButton, PRESSED_BUTTON_OFFSET)
-	get_tree().change_scene("res://Scenes/game_scene.tscn")
+	get_tree().change_scene("res://scenes/game_scene.tscn")
 
 func _on_more_button_pressed():
 	GlobalHandler.pressButton(moreButton, PRESSED_BUTTON_OFFSET)
 
 func _on_more_button_released():
-	GlobalHandler.releaseButton(playButton, PRESSED_BUTTON_OFFSET)
+	GlobalHandler.releaseButton(moreButton, PRESSED_BUTTON_OFFSET)
 	OS.shell_open(GlobalHandler.DEVELOPER_URL)
 	
 func _on_subscribe_button_pressed():
@@ -44,4 +44,4 @@ func _on_info_button_pressed():
 
 func _on_info_button_released():
 	GlobalHandler.releaseButton(infoButton, PRESSED_BUTTON_OFFSET)
-	get_tree().change_scene("res://Scenes/about_scene.tscn")
+	get_tree().change_scene("res://scenes/about_scene.tscn")

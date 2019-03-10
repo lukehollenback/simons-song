@@ -31,7 +31,7 @@ func _on_home_button_pressed():
 
 func _on_home_button_released():
 	GlobalHandler.releaseButton(homeButton, PRESSED_BUTTON_OFFSET)
-	get_tree().change_scene("res://Scenes/menu_scene.tscn")
+	get_tree().change_scene("res://scenes/menu_scene.tscn")
 
 func refreshUI():
 	# Toggle which icon is shown on the audio button
