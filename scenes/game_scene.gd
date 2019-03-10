@@ -93,7 +93,9 @@ func _process(delta):
 func _on_blue_button_pressed():
 	blueButtonParticles.restart()
 	GlobalHandler.pressButton(blueButton, PRESSED_BUTTON_OFFSET, true)
-	cChordAudio.play()
+
+	if GlobalHandler.isAudioEnabled():
+		cChordAudio.play()
 
 func _on_blue_button_released():
 	GlobalHandler.releaseButton(blueButton, PRESSED_BUTTON_OFFSET, true)
@@ -102,7 +104,9 @@ func _on_blue_button_released():
 func _on_green_button_pressed():
 	greenButtonParticles.restart()
 	GlobalHandler.pressButton(greenButton, PRESSED_BUTTON_OFFSET, true)
-	gChordAudio.play()
+
+	if GlobalHandler.isAudioEnabled():
+		gChordAudio.play()
 
 func _on_green_button_released():
 	GlobalHandler.releaseButton(greenButton, PRESSED_BUTTON_OFFSET, true)
@@ -111,7 +115,9 @@ func _on_green_button_released():
 func _on_red_button_pressed():
 	redButtonParticles.restart()
 	GlobalHandler.pressButton(redButton, PRESSED_BUTTON_OFFSET, true)
-	amChordAudio.play()
+
+	if GlobalHandler.isAudioEnabled():
+		amChordAudio.play()
 
 func _on_red_button_released():
 	GlobalHandler.releaseButton(redButton, PRESSED_BUTTON_OFFSET, true)
@@ -120,7 +126,9 @@ func _on_red_button_released():
 func _on_yellow_button_pressed():
 	yellowButtonParticles.restart()
 	GlobalHandler.pressButton(yellowButton, PRESSED_BUTTON_OFFSET, true)
-	fChordAudio.play()
+
+	if GlobalHandler.isAudioEnabled():
+		fChordAudio.play()
 
 func _on_yellow_button_released():
 	GlobalHandler.releaseButton(yellowButton, PRESSED_BUTTON_OFFSET, true)

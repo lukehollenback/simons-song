@@ -44,3 +44,4 @@ func _on_info_button_pressed():
 
 func _on_info_button_released():
 	GlobalHandler.releaseButton(infoButton, PRESSED_BUTTON_OFFSET)
+	get_tree().change_scene("res://Scenes/about_scene.tscn")

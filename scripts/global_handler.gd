@@ -19,7 +19,8 @@ var hasSubscribed = false
 var savedGlobals = {
 		"highscore" : 0,
 		"playtime" : 0.0,
-		"remainingDoublePointsTime" : 0.0
+		"remainingDoublePointsTime" : 0.0,
+		"audioEnabled" : true
 	}
 
 func _ready():
@@ -64,16 +65,22 @@ func setSavedGlobal(key, value):
 func getSavedGlobal(key):
 	return savedGlobals[key]
 
+func setAudioEnabled(audio):
+	savedGlobals["audioEnabled"] = audio
+
+func isAudioEnabled():
+	return savedGlobals["audioEnabled"]
+
 func pressButton(button, pressedOffset, muteClick = false):
 	button.position.y += pressedOffset
 	
-	if not muteClick:
+	if not muteClick and isAudioEnabled():
 		GlobalHandler.clickPlayer.play()
 
 func releaseButton(button, pressedOffset, muteClick = false):
 	button.position.y -= pressedOffset
 	
-	if not muteClick:
+	if not muteClick and isAudioEnabled():
 		GlobalHandler.clickPlayer.play()
 	
 func incrementPlaytime(amount):
@@ -102,7 +109,6 @@ func resetPlaytimeSinceLastSubscriptionOffer():
 
 func getPlaytime():
 	return savedGlobals["playtime"]
-
 
 func isTimeForBannerAd():
 	if getPlaytime() > PRE_AD_PLAYTIME and playtimeSinceLastBannerAd > AD_BANNER_FREE_PLAYTIME:

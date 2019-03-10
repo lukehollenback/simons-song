@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/about_scene.gd" type="Script" id=1]
+[ext_resource path="res://sprites/white_button.svg" type="Texture" id=2]
+[ext_resource path="res://sprites/white_button_pressed.svg" type="Texture" id=3]
+[ext_resource path="res://sprites/game_icons.svg" type="Texture" id=4]
+[ext_resource path="res://sprites/red_button.svg" type="Texture" id=5]
+[ext_resource path="res://sprites/red_button_pressed.svg" type="Texture" id=6]
+
+[node name="Node" type="Node" index="0"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 32.4446 ],
+"_edit_vertical_guides_": [ 32.0007, 568.587 ]
+}
+
+[node name="Background" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 600.0
+margin_bottom = 1024.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Audio Button" type="TouchScreenButton" parent="." index="1"]
+
+position = Vector2( 470.771, 32.8819 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Audio On Icon" type="Sprite" parent="Audio Button" index="0"]
+
+position = Vector2( 108, 108 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 400, 300, 100, 100 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Audio Off Icon" type="Sprite" parent="Audio Button" index="1"]
+
+position = Vector2( 108, 108 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 500, 300, 100, 100 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Home Button" type="TouchScreenButton" parent="." index="2"]
+
+position = Vector2( 32.2735, 32.7659 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 6 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Home Icon" type="Sprite" parent="Home Button" index="0"]
+
+position = Vector2( 108, 108 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 300, 300, 100, 100 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+
