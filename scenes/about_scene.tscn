@@ -8,7 +8,7 @@
 [ext_resource path="res://sprites/red_button_pressed.svg" type="Texture" id=6]
 [ext_resource path="res://fonts/kenny_pixel_square.tres" type="DynamicFont" id=7]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {

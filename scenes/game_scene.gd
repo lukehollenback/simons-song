@@ -154,7 +154,7 @@ func playPattern():
 		var simulatedTouch = InputEventScreenTouch.new()
 		
 		simulatedTouch.set_index(0)
-		simulatedTouch.set_position(button.position)
+		simulatedTouch.set_position(calculateActualPosition(button.position))
 		simulatedTouch.set_pressed(true)
 		
 		yield(get_tree().create_timer(.5), "timeout")
@@ -233,3 +233,16 @@ func gameOver():
 	# (NOTE: High scores will be calculated and persisted if necessary in the
 	#  game over scene.)
 	get_tree().change_scene("res://Scenes/game_over_scene.tscn")
+
+func calculateActualPosition(localPosition):
+	var offsetX = OS.get_window_safe_area().size.x - get_viewport().get_size().x
+	if offsetX < 0:
+		offsetX = 0
+
+	var offsetY = OS.get_window_safe_area().size.y - get_viewport().get_size().y
+	if offsetY < 0:
+		offsetY = 0
+	
+	var offsetLocalPosition = Vector2((localPosition.x + offsetX), (localPosition.y + offsetY))
+
+	return (get_viewport_transform() * (get_global_transform() * offsetLocalPosition))

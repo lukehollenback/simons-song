@@ -132,14 +132,14 @@ func showPurchaseOffer():
 	if not hasSubscribed:
 		showSubscriptionOffer()
 	else:
-		showPurchaseOffer()
+		showDoublePointsOffer()
 
 func showSubscriptionOffer():
 	# (TODO: Show the in-app-purchase offer for a subscription to an ad-free
 	#  experience if the user has not yet subscribed.)
 	pass
 
-func showPurchaseOffer():
+func showDoublePointsOffer():
 	# (TODO: Show the in-app-purchse offer for a one-time double points offer.)
 	pass
 
