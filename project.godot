@@ -12,7 +12,8 @@ config_version=3
 
 config/name="Simon's Song"
 run/main_scene="res://scenes/menu_scene.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://meta/launch_screen.png"
+config/icon="res://meta/icon_64x64.png"
 
 [autoload]
 
