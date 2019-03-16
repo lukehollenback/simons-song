@@ -1,5 +1,6 @@
 extends Node
 
+const ENABLE_ADS = false
 const DEVELOPER_URL = "https://appstore.com/LukeHollenback"
 const APP_URL = ""
 const SAVE_FILE = "user://game.save"
@@ -88,9 +89,11 @@ func releaseButton(button, pressedOffset, muteClick = false):
 func incrementPlaytime(amount):
 	# Increment playtime counters for advertisements
 	savedGlobals["playtime"] += amount
-	playtimeSinceLastFullScreenAd += amount
-	playtimeSinceLastBannerAd += amount
-	playtimeSinceLastSubscriptionOffer += amount
+
+	if ENABLE_ADS:
+		playtimeSinceLastFullScreenAd += amount
+		playtimeSinceLastBannerAd += amount
+		playtimeSinceLastSubscriptionOffer += amount
 
 	# If double points time has been purchased or earned, decrement it accordingly
 	savedGlobals["remainingDoublePointsTime"] -= amount
