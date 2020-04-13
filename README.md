@@ -1,2 +1,9 @@
 # Simon's Song
-A simple memory game for iOS.
+
+![Status: Complete](https://img.shields.io/badge/Status-Complete-green.svg)
+
+A simple memory game for iOS created with [Godot Engine](https://godotengine.org/). Makes use of [Kenny's Free Game Assets](https://kenney.nl/assets).
+
+Although the intended target is iOS, Godot Engine supports a variety of other targets as well (Android, macOS, Windows, and so on). As it currently stands, Simon's Song should be able to be built for most if not all of these targets without much issue.
+
+A variety of monetization hook points exist in the code to support in-app-purchases and advertisements.
