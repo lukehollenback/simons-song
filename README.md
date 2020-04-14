@@ -11,5 +11,5 @@ A variety of monetization hook points exist in the code to support in-app-purcha
 ## Screenshots
 
 <p align="center">
-  <img src="screenshots/2020.4.13%20–%20Simon's%20Song%20–%20Basic%20Gameplay.gif" alt="2020.4.13 – Simon's Song – Basic Gameplay">
+  ![2020.4.13 – Simon's Song – Basic Gameplay](screenshots/2020.4.13%20–%20Simon's%20Song%20–%20Basic%20Gameplay.gif)
 </p>
