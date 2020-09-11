@@ -6,7 +6,12 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=3
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
 
 [application]
 
@@ -26,9 +31,13 @@ ScoreHandler="*res://scripts/score_handler.gd"
 window/size/width=600
 window/size/height=1024
 window/handheld/orientation="portrait"
-window/handheld/emulate_touchscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+window/handheld/emulate_touchscreen=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 

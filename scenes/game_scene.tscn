@@ -18,443 +18,190 @@
 [ext_resource path="res://sprites/green_arrow_left.svg" type="Texture" id=16]
 
 [sub_resource type="Gradient" id=1]
-
-offsets = PoolRealArray( 0, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=2]
-
-flags = 4
 gradient = SubResource( 1 )
-width = 2048
 
 [sub_resource type="ParticlesMaterial" id=3]
-
-render_priority = 0
-trail_divisor = 1
 emission_shape = 1
 emission_sphere_radius = 15.0
-flag_align_y = false
-flag_rotate_y = false
 flag_disable_z = true
 spread = 180.0
-flatness = 0.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 100.0
-initial_velocity_random = 0.0
 angular_velocity = 8.0
-angular_velocity_random = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 1.0
-scale_random = 0.0
 color_ramp = SubResource( 2 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Angle", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Spread" ]
 
-[node name="Game Scene" type="Node2D" index="0"]
-
+[node name="Game Scene" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 319.252 ],
 "_edit_vertical_guides_": [ 32.8895, 568.313 ]
 }
 
-[node name="Background" type="ColorRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Background" type="ColorRect" parent="."]
 margin_right = 600.0
 margin_bottom = 1024.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Score Label" type="Label" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Score Label" type="Label" parent="."]
 margin_left = 35.0
 margin_top = 20.0
 margin_right = 300.0
 margin_bottom = 56.0
 rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 text = "03012"
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Time Label" type="Label" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Time Label" type="Label" parent="."]
 margin_left = 35.0
 margin_top = 20.0
 margin_right = 300.0
 margin_bottom = 56.0
 rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 text = "10"
 align = 2
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Stage Label" type="Label" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Stage Label" type="Label" parent="."]
 margin_left = 35.0
 margin_top = 77.0
 margin_right = 185.0
 margin_bottom = 113.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 text = "Stage 13"
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors" ]
 
-[node name="Blue Button" type="TouchScreenButton" parent="." index="4"]
-
+[node name="Blue Button" type="TouchScreenButton" parent="."]
 position = Vector2( 335, 672.882 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 4 )
-bitmask = null
-shape = null
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = ""
-visibility_mode = 0
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Blue Button Particles" type="Particles2D" parent="." index="5"]
-
+[node name="Blue Button Particles" type="Particles2D" parent="."]
 modulate = Color( 0.0980392, 0.537255, 0.721569, 1 )
 position = Vector2( 432.63, 771.218 )
 rotation = -1.5708
 scale = Vector2( 3, 3 )
 emitting = false
 amount = 100
-lifetime = 1.0
 one_shot = true
 preprocess = 0.5
-speed_scale = 1.0
 explosiveness = 1.0
 randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
 process_material = SubResource( 3 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Time", "Transform", "Visibility" ]
 
-[node name="Green Button" type="TouchScreenButton" parent="." index="6"]
-
+[node name="Green Button" type="TouchScreenButton" parent="."]
 position = Vector2( 70, 521 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 6 )
-bitmask = null
-shape = null
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = ""
-visibility_mode = 0
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Green Button Particles" type="Particles2D" parent="." index="7"]
-
+[node name="Green Button Particles" type="Particles2D" parent="."]
 modulate = Color( 0.372549, 0.694118, 0.227451, 1 )
 position = Vector2( 168.182, 619.123 )
 rotation = -1.5708
 scale = Vector2( 3, 3 )
 emitting = false
 amount = 100
-lifetime = 1.0
 one_shot = true
 preprocess = 0.5
-speed_scale = 1.0
 explosiveness = 1.0
 randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
 process_material = SubResource( 3 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Time", "Transform", "Visibility" ]
 
-[node name="Red Button" type="TouchScreenButton" parent="." index="8"]
-
+[node name="Red Button" type="TouchScreenButton" parent="."]
 position = Vector2( 335, 428.085 )
 normal = ExtResource( 7 )
 pressed = ExtResource( 8 )
-bitmask = null
-shape = null
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = ""
-visibility_mode = 0
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Red Button Particles" type="Particles2D" parent="." index="9"]
-
+[node name="Red Button Particles" type="Particles2D" parent="."]
 modulate = Color( 0.803922, 0.364706, 0.0705882, 1 )
 position = Vector2( 432.337, 527.935 )
 rotation = -1.5708
 scale = Vector2( 3, 3 )
 emitting = false
 amount = 100
-lifetime = 1.0
 one_shot = true
 preprocess = 0.5
-speed_scale = 1.0
 explosiveness = 1.0
 randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
 process_material = SubResource( 3 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Time", "Transform", "Visibility" ]
 
-[node name="Yellow Button" type="TouchScreenButton" parent="." index="10"]
-
+[node name="Yellow Button" type="TouchScreenButton" parent="."]
 position = Vector2( 70, 767.857 )
 normal = ExtResource( 9 )
 pressed = ExtResource( 10 )
-bitmask = null
-shape = null
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = ""
-visibility_mode = 0
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="Yellow Button Particles" type="Particles2D" parent="." index="11"]
-
+[node name="Yellow Button Particles" type="Particles2D" parent="."]
 modulate = Color( 0.803922, 0.643137, 0, 1 )
 position = Vector2( 167.889, 864.992 )
 rotation = -1.5708
 scale = Vector2( 3, 3 )
 emitting = false
 amount = 100
-lifetime = 1.0
 one_shot = true
 preprocess = 0.5
-speed_scale = 1.0
 explosiveness = 1.0
 randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
 process_material = SubResource( 3 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Time", "Transform", "Visibility" ]
 
-[node name="C Chord Audio" type="AudioStreamPlayer" parent="." index="12"]
-
+[node name="C Chord Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="G Chord Audio" type="AudioStreamPlayer" parent="." index="13"]
-
+[node name="G Chord Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="Am Chord Audio" type="AudioStreamPlayer" parent="." index="14"]
-
+[node name="Am Chord Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="F Chord Audio" type="AudioStreamPlayer" parent="." index="15"]
-
+[node name="F Chord Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="Double Points Label" type="Label" parent="." index="16"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Double Points Label" type="Label" parent="."]
 margin_left = 505.0
 margin_top = 92.0
 margin_right = 613.0
 margin_bottom = 167.0
 rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.117647, 0.654902, 0.882353, 1 )
 text = "Double
 Points!"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Simon's Turn Sprite" type="Sprite" parent="." index="17"]
-
+[node name="Simon\'s Turn Sprite" type="Sprite" parent="."]
 position = Vector2( 72.2112, 196.461 )
 texture = ExtResource( 15 )
 
-[node name="Simon's Turn Label" type="Label" parent="." index="18"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Simon\'s Turn Label" type="Label" parent="."]
 margin_top = 167.0
 margin_right = 400.0
 margin_bottom = 203.0
 rect_scale = Vector2( 1.5, 1.5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 text = "Simon"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors" ]
 
-[node name="Your Turn Sprite" type="Sprite" parent="." index="19"]
-
+[node name="Your Turn Sprite" type="Sprite" parent="."]
 position = Vector2( 528.728, 257.241 )
 texture = ExtResource( 16 )
 
-[node name="Your Turn Label" type="Label" parent="." index="20"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Your Turn Label" type="Label" parent="."]
 margin_top = 228.0
 margin_right = 400.0
 margin_bottom = 264.0
 rect_scale = Vector2( 1.5, 1.5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 text = "You"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors" ]
-
-

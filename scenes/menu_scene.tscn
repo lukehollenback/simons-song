@@ -10,282 +10,137 @@
 [ext_resource path="res://sprites/blue_button.svg" type="Texture" id=8]
 [ext_resource path="res://sprites/blue_button_pressed.svg" type="Texture" id=9]
 
-[node name="Menu Scene" type="Node" index="0"]
-
+[node name="Menu Scene" type="Node"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 512.644, 806.952, 160.675, 276.896 ],
 "_edit_vertical_guides_": [ 300.566, 301.185, 56.4849, 545.71 ]
 }
 
-[node name="Background" type="ColorRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Background" type="ColorRect" parent="."]
 margin_right = 600.0
 margin_bottom = 1024.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Simon's Label" type="Label" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Simon\'s Label" type="Label" parent="."]
 margin_top = 260.0
 margin_right = 200.0
 margin_bottom = 296.0
 rect_scale = Vector2( 3, 3 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 text = "Simon's"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="S Label" type="Label" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="S Label" type="Label" parent="."]
 margin_left = 124.0
 margin_top = 348.0
 margin_right = 142.0
 margin_bottom = 384.0
 rect_rotation = 15.0
 rect_scale = Vector2( 5, 5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.0941176, 0.537255, 0.721569, 1 )
 text = "S"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="O Label" type="Label" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="O Label" type="Label" parent="."]
 margin_left = 184.0
 margin_top = 368.0
 margin_right = 202.0
 margin_bottom = 404.0
 rect_rotation = -15.0
 rect_scale = Vector2( 5, 5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.803922, 0.364706, 0.0666667, 1 )
 text = "o"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="N Label" type="Label" parent="." index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="N Label" type="Label" parent="."]
 margin_left = 345.0
 margin_top = 349.0
 margin_right = 363.0
 margin_bottom = 385.0
 rect_rotation = 15.0
 rect_scale = Vector2( 5, 5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.803922, 0.639216, 0, 1 )
 text = "n"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="G Label" type="Label" parent="." index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="G Label" type="Label" parent="."]
 margin_left = 406.0
 margin_top = 368.0
 margin_right = 424.0
 margin_bottom = 404.0
 rect_rotation = -15.0
 rect_scale = Vector2( 5, 5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.368627, 0.694118, 0.227451, 1 )
 text = "g"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Play Button" type="TouchScreenButton" parent="." index="6"]
-
-editor/display_folded = true
+[node name="Play Button" type="TouchScreenButton" parent="."]
 position = Vector2( 110, 600 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 4 )
-bitmask = null
-shape = null
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = ""
-visibility_mode = 0
-_sections_unfolded = [ "Visibility" ]
 
-[node name="Play Label" type="Label" parent="Play Button" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Play Label" type="Label" parent="Play Button"]
 margin_left = 9.0
 margin_top = 9.0
 margin_right = 190.0
 margin_bottom = 45.0
 rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "Play"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="More Button" type="TouchScreenButton" parent="." index="7"]
-
-editor/display_folded = true
+[node name="More Button" type="TouchScreenButton" parent="."]
 position = Vector2( 109.731, 708.867 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 6 )
-bitmask = null
-shape = null
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = ""
-visibility_mode = 0
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="More Icon" type="Sprite" parent="More Button" index="0"]
-
+[node name="More Icon" type="Sprite" parent="More Button"]
 position = Vector2( 108.012, 108.045 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 1000, 0, 100, 100 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="Subscribe Button" type="TouchScreenButton" parent="." index="8"]
-
-editor/display_folded = true
+[node name="Subscribe Button" type="TouchScreenButton" parent="."]
+visible = false
 position = Vector2( 252.095, 708.847 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 8 )
 pressed = ExtResource( 9 )
-bitmask = null
-shape = null
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = ""
-visibility_mode = 0
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="Subscribe Icon" type="Sprite" parent="Subscribe Button" index="0"]
-
+[node name="Subscribe Icon" type="Sprite" parent="Subscribe Button"]
 position = Vector2( 108, 108 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 1100, 200, 100, 100 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="Info Button" type="TouchScreenButton" parent="." index="9"]
-
-editor/display_folded = true
+[node name="Info Button" type="TouchScreenButton" parent="."]
 position = Vector2( 391.545, 708.758 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 6 )
-bitmask = null
-shape = null
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = ""
-visibility_mode = 0
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="Info Icon" type="Sprite" parent="Info Button" index="0"]
-
+[node name="Info Icon" type="Sprite" parent="Info Button"]
 position = Vector2( 108, 108 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 1200, 200, 100, 100 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
-
-

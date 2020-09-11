@@ -1,7 +1,7 @@
 extends Node
 
 const ENABLE_ADS = false
-const DEVELOPER_URL = "https://appstore.com/LukeHollenback"
+const DEVELOPER_URL = "https://lukehollenback.itch.io/"
 const APP_URL = ""
 const SAVE_FILE = "user://game.save"
 const SCORE_LABEL_FORMAT = "%05d"
