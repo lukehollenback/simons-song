@@ -1,6 +1,6 @@
 # Simon's Song
 
-![Status: Complete](https://img.shields.io/badge/Status-Complete-green.svg)
+<img src="https://img.shields.io/badge/status-Complete-green.svg" alt="Status: Complete"/>
 
 A simple memory game for iOS created with [Godot Engine](https://godotengine.org/). Makes use of [Kenny's Free Game Assets](https://kenney.nl/assets).
 
